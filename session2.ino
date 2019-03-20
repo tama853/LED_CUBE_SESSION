@@ -44,7 +44,7 @@ void setup()
     pinMode(layer[i], OUTPUT);
   }
   //seeding random for random pattern
-  randomSeed(analogRead(10));
+  //randomSeed(analogRead(10));
 }
 
 //xxxxxxxxxxxxxxxxxxxxFUNCTION LOOPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
