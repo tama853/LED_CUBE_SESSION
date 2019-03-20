@@ -44,7 +44,7 @@ void setup()
     pinMode(layer[i], OUTPUT);
   }
   //seeding random for random pattern
-  //randomSeed(analogRead(10));
+  randomSeed(analogRead(10));
 }
 
 //xxxxxxxxxxxxxxxxxxxxFUNCTION LOOPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -52,7 +52,7 @@ void setup()
 
 void loop()
 {
- 
+ // turns off columns
   for (int i = 0; i < 9; i++)
   {
     digitalWrite(column[i], 0);
@@ -62,13 +62,13 @@ void loop()
   {
     digitalWrite(layer[i], 1);
   }
-    turnOnOnebyOne();
-    turnEverythingOn();//turn all on
-    flickerOn();
+    //turnOnOnebyOne();
+    //turnEverythingOn();//turn all on
+    //flickerOn();
     delay(time);
-    flickerOff();
-  mytest();
-    turnOnAndOffAllByLayerUpAndDownNotTimed();
+    //flickerOff();
+    mytest();
+    //turnOnAndOffAllByLayerUpAndDownNotTimed();
 //  layerstompUpAndDown(); not working
 //  turnOnAndOffAllByColumnSideways(); not working
 //  delay(time);
@@ -82,7 +82,6 @@ void loop()
 //  goThroughAllLedsOneAtATime(); not working
 //  propeller(); not working
 //  spiralInAndOut();
-  
 //  turnEverythingOff();
 //  delay(100);
 }
@@ -99,7 +98,10 @@ void  mytest()
       delay(100);
       for (int k = 0; k < 3; k++)
       {
+        // turn layer on
         digitalWrite(layer[k], 0);
+        
+         // turn layer off
         digitalWrite(column[i], 1);
         delay(100);
         digitalWrite(layer[k], 1);
